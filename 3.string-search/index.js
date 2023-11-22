@@ -3,6 +3,7 @@ const stringSearch = (string, pattern) => {
   for (let i = 0; i < string.length; i++) {
     for (let j = 0; j < pattern.length; j++) {
       if (pattern[j] !== string[i + j]) break;
+      console.log(j);
       if (j === pattern.length - 1) matches++;
     }
   }
