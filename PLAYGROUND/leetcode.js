@@ -18,6 +18,7 @@
 // Explanation: The arrays we are merging are [1] and [].
 // The result of the merge is [1].
 
+
 var merge = function (nums1, m, nums2, n) {};
 
 let nums1 = [1, 2, 3, 0, 0, 0];

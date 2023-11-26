@@ -50,9 +50,6 @@
 //   return arr;
 // };
 
-<<<<<<< Updated upstream
-console.log(bubbleSort([3, 2, 6, 1, 6, 8, 12, 52, 4]));
-=======
 //THE BEST VERSION with "noswaps"
 const bubbleSort = (arr) => {
   let noSwaps;
@@ -76,4 +73,3 @@ const bubbleSort = (arr) => {
 };
 
 console.log(bubbleSort([3, 2, 6, 1, 8, 12, 52, 4]));
->>>>>>> Stashed changes
