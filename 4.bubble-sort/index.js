@@ -59,10 +59,8 @@ const bubbleSort = (arr) => {
       if (arr[j] > arr[j + 1]) {
         //swap
         let temp = arr[j];
-        console.log("temp", temp);
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
-        console.log("arr[j]", arr[j]);
 
         noSwaps = false;
       }
