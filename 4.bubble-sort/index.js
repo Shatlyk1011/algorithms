@@ -70,4 +70,6 @@ const bubbleSort = (arr) => {
   return arr;
 };
 
-console.log(bubbleSort([3, 2, 6, 1, 8, 12, 52, 4]));
+console.log(bubbleSort([2, 5, 1, 5, 7, 89, 3, 1, 25, 7, 89]));
+
+console.log([2, 5, 1, 5, 7, 89, 3, 1, 25, 7, 89].length);
