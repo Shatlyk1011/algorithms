@@ -55,13 +55,38 @@
 
 // BUBBLE SORT
 // given an unsorted array > return sorted
+// const bubbleSort = (arr) => {
+//   let count = 0;
+//   const swap = (arr, idx1, idx2) => {
+//     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+//   };
+//   let noSwaps;
+//   //
+//   for (let i = 0; i < arr.length; i++) {
+//     count++;
+//     noSwaps = true;
+//     for (let j = 0; j < arr.length; j++) {
+//       count++;
+//       if (arr[j] > arr[j + 1]) {
+//         swap(arr, j, j + 1);
+//         noSwaps = false;
+//       }
+//     }
+//     // if (noSwaps) break;
+//   }
+//   console.log(count);
+//   return arr;
+// };
+
+
+//bubble sort
 const bubbleSort = (arr) => {
   const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
   };
 
-  for (let i = 0; i <= arr.length; i++) {
-    for (let j = 0; j <= arr.length; j++) {
+  for (let i = arr.length; i > 0; i--) {
+    for (let j = 0; j < i - 1; j++) {
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1);
       }
@@ -69,6 +94,6 @@ const bubbleSort = (arr) => {
   }
 
   return arr;
-};
+}
 
-console.log(bubbleSort([2, 5, 1, 5, 7, 89, 3, 1, 25, 7, 89]));
+console.log(bubbleSort([3,42,5,6,2,1,4,3,6,7,]))

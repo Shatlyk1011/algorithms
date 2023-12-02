@@ -13,12 +13,7 @@ const selectionSort = (arr) => {
         lowest = j;
       }
     }
-    if (i !== lowest) {
-      swap(arr, i, lowest);
-      // let temp = arr[i];
-      // arr[i] = arr[lowest];
-      // arr[lowest] = temp;
-    }
+    if (i !== lowest) swap(arr, i, lowest);
   }
 
   return arr;
