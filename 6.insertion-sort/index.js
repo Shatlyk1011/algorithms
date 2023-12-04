@@ -1,3 +1,6 @@
+//Time complexity - N^2
+//Space complexity - 1
+
 // const insertionSort = (arr) => {
 //   for (let i = 1; i < arr.length; i++) {
 //     let currentVal = arr[i];
