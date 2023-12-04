@@ -1,4 +1,5 @@
 //Time complexity - N^2
+//Space complexity - 1
 //use case: when you know your data is nearly sorted
 
 // UNOPTIMIZED
