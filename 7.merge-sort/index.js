@@ -1,3 +1,7 @@
+//Time complexity - N log^n
+//use case: when you know your data is nearly sorted
+//Space complexity: N
+
 //MERGING SORTED ARRAY
 function merge(arr1, arr2) {
   let results = [];
@@ -23,7 +27,6 @@ function merge(arr1, arr2) {
     j++;
   }
 
-  console.log(results);
   return results;
 }
 
@@ -37,3 +40,5 @@ function mergeSort(arr) {
 
   return merge(left, right);
 }
+
+console.log(mergeSort([10, 54, 76, 95, 99, 10, 4, 234, 231, 125, 123, 12, 235, 25, 1]));
