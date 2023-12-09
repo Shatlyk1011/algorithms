@@ -79,21 +79,76 @@
 // };
 
 
-//bubble sort
-const bubbleSort = (arr) => {
-  const swap = (arr, idx1, idx2) => {
-    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-  };
+//BUBBLE SORT
+// const bubbleSort = (arr) => {
+//   const swap = (arr, idx1, idx2) => {
+//     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+//   };
+//   let noSwaps;
 
-  for (let i = arr.length; i > 0; i--) {
-    for (let j = 0; j < i - 1; j++) {
-      if (arr[j] > arr[j + 1]) {
-        swap(arr, j, j + 1);
-      }
+//   for (let i = arr.length; i > 0; i--) {
+//     noSwaps = true;
+//     for (let j = 0; j < i - 1; j++) {
+//       if (arr[j] > arr[j + 1]) {
+//         swap(arr, j, j + 1);
+//         noSwaps = false;
+//       }
+//     }
+//     if (noSwaps) break;
+//   }
+
+//   return arr;
+// }
+
+// console.log(bubbleSort([3,42,5,6,2,1,4,3,6,7,]))
+
+//MERGE SORT
+
+// MERGE 2 SORTED ARRAYS
+const merge = (arr1, arr2) => {
+  let results = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr2[j] > arr1[i]) {
+      results.push(arr1[i]);
+      i++;
+    } else {
+      results.push(arr2[j]);
+      j++;
     }
   }
 
-  return arr;
-}
+  while (i < arr1.length) {
+    results.push(arr1[i]);
+    i++;
+  }
 
-console.log(bubbleSort([3,42,5,6,2,1,4,3,6,7,]))
+  while (j < arr2.length) {
+    results.push(arr2[j]);
+    j++;
+  }
+
+  return results;
+};
+
+console.log(merge([2, 3, 51, 66], [42, 123, 403, 1200]));
+
+const mergeSort = (arr) => {
+  if (arr.length <= 1) return arr;
+
+  let middle = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, middle));
+  let right = mergeSort(arr.slice(middle));
+
+  return merge(left, right);
+};
+
+let arr = [
+  10, 54, 76, 95, 99, 10, 4, 234, 231, 125, 123, 12, 235, 25, 1, 321, 123, 123, 123, 124, 124, 2346,
+  256, 3567, 251234, 12, 52, 75, 6754, 61, 313,
+];
+console.log(mergeSort(arr));
+console.log("length", mergeSort(arr).length);
+console.log("length", arr.length);
