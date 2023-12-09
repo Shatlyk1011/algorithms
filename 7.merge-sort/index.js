@@ -1,5 +1,4 @@
 //Time complexity - N log^n
-//use case: when you know your data is nearly sorted
 //Space complexity: N
 
 //MERGING SORTED ARRAY

@@ -72,5 +72,3 @@ const bubbleSort = (arr) => {
 };
 
 console.log(bubbleSort([2, 5, 1, 5, 7, 89, 3, 1, 25, 7, 89]));
-
-console.log([2, 5, 1, 5, 7, 89, 3, 1, 25, 7, 89].length);
