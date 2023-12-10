@@ -1,6 +1,5 @@
 //Time complexity - N log^n
 //Space complexity: N
-
 function pivot(arr, start = 0, end = arr.length + 1) {
   const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
@@ -13,12 +12,20 @@ function pivot(arr, start = 0, end = arr.length + 1) {
     if (pivot > arr[i]) {
       swapIdx++;
       swap(arr, swapIdx, i);
-      console.log(arr);
     }
   }
-  console.log("2", arr);
   swap(arr, start, swapIdx);
   return swapIdx;
 }
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivotIndex = pivot(arr, left, right);
+    //left
+    quickSort(arr, left, pivotIndex - 1);
+    //right
+    quickSort(arr, pivotIndex + 1, right);
+  }
 
-pivot([4, 1, 2, 5, 6, 9, 4, 3]);
+  return arr;
+}
+console.log("hmhm", quickSort([4, 1, 2, 5, 6, 9, 4, 3]));
