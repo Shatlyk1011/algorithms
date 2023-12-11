@@ -104,51 +104,114 @@
 
 //MERGE SORT
 
-// MERGE 2 SORTED ARRAYS
-const merge = (arr1, arr2) => {
-  let results = [];
-  let i = 0;
-  let j = 0;
+// // MERGE 2 SORTED ARRAYS
+// const merge = (arr1, arr2) => {
+//   let results = [];
+//   let i = 0;
+//   let j = 0;
 
-  while (i < arr1.length && j < arr2.length) {
-    if (arr2[j] > arr1[i]) {
-      results.push(arr1[i]);
-      i++;
-    } else {
-      results.push(arr2[j]);
-      j++;
+//   while (i < arr1.length && j < arr2.length) {
+//     if (arr2[j] > arr1[i]) {
+//       results.push(arr1[i]);
+//       i++;
+//     } else {
+//       results.push(arr2[j]);
+//       j++;
+//     }
+//   }
+
+//   while (i < arr1.length) {
+//     results.push(arr1[i]);
+//     i++;
+//   }
+
+//   while (j < arr2.length) {
+//     results.push(arr2[j]);
+//     j++;
+//   }
+
+//   return results;
+// };
+
+// console.log(merge([2, 3, 51, 66], [42, 123, 403, 1200]));
+
+// const mergeSort = (arr) => {
+//   if (arr.length <= 1) return arr;
+
+//   let middle = Math.floor(arr.length / 2);
+//   let left = mergeSort(arr.slice(0, middle));
+//   let right = mergeSort(arr.slice(middle));
+
+//   return merge(left, right);
+// };
+
+// let arr = [
+//   10, 54, 76, 95, 99, 10, 4, 234, 231, 125, 123, 12, 235, 25, 1, 321, 123, 123, 123, 124, 124, 2346,
+//   256, 3567, 251234, 12, 52, 75, 6754, 61, 313,
+// ];
+// console.log(mergeSort(arr));
+// console.log("length", mergeSort(arr).length);
+// console.log("length", arr.length);
+
+//////
+// function maxChar(str) {
+//   let obj = {}
+//   let max = 0
+//   let maxChar = ''
+//   for(const char of str) obj[char] = obj[char] + 1 || 1
+
+//   // in object use IN to get KEYS
+//   for(let idx in obj) {
+//     if(obj[idx] > max) {
+//       max = obj[idx]
+//       maxChar = idx
+//     }
+//   }
+
+//   return maxChar
+
+// }
+
+// console.log('maxChar', maxChar('hekkkkkkkkkkkkkkkko'));  
+
+
+
+//////// fizzbuzz
+// const fizzBuzz = (number) => {
+//   for(let i = 1; i <= number; i++) {
+//     if(i % 3 === 0 && i % 5 === 0) {
+//       console.log('fizzBuzz');
+//       continue;
+//     } else if(i % 5 === 0) {
+//       console.log('buzz');
+//       continue;
+//     } else if (i % 3 === 0) {
+//       console.log('fizz')
+//       continue
+//     } else console.log(i)
+//   }
+// }
+
+// console.log(fizzBuzz(15))
+
+
+// need refactor
+const arrayChunk= (arr, size) => {
+  let maxSize = Math.ceil(arr.length /size)
+  let chunk = []
+  let count = 0
+  for(let i = 0; i < maxSize; i++) {
+    let temp = []  
+    for(let j = 0; j< size; j++) {
+      if(arr[count]) {
+        temp.push(arr[count])
+        count++
+      }
     }
+      chunk.push(temp)
+
   }
+  return chunk
+}
 
-  while (i < arr1.length) {
-    results.push(arr1[i]);
-    i++;
-  }
-
-  while (j < arr2.length) {
-    results.push(arr2[j]);
-    j++;
-  }
-
-  return results;
-};
-
-console.log(merge([2, 3, 51, 66], [42, 123, 403, 1200]));
-
-const mergeSort = (arr) => {
-  if (arr.length <= 1) return arr;
-
-  let middle = Math.floor(arr.length / 2);
-  let left = mergeSort(arr.slice(0, middle));
-  let right = mergeSort(arr.slice(middle));
-
-  return merge(left, right);
-};
-
-let arr = [
-  10, 54, 76, 95, 99, 10, 4, 234, 231, 125, 123, 12, 235, 25, 1, 321, 123, 123, 123, 124, 124, 2346,
-  256, 3567, 251234, 12, 52, 75, 6754, 61, 313,
-];
-console.log(mergeSort(arr));
-console.log("length", mergeSort(arr).length);
-console.log("length", arr.length);
+console.log('arr', arrayChunk([12,123,12,1,241,24,425,34,2,3,4,6,3,4,45,6,7,], 5));
