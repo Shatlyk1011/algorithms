@@ -80,18 +80,104 @@ console.log(merge(nums1, m, nums2, n));
 // Input: nums = [3,2,3]
 // Output: 3
 
-var majorityElement = function(nums) {
-  let obj = {}
+// var majorityElement = function(nums) {
+//   let obj = {}
   
-  for(let i = 0; i< nums.length; i++){
-    obj[nums[i]] ? obj[nums[i]] = obj[nums[i]] + 1 : obj[nums[i]] = 1
-  };
+//   for(let i = 0; i< nums.length; i++){
+//     obj[nums[i]] ? obj[nums[i]] = obj[nums[i]] + 1 : obj[nums[i]] = 1
+//   };
 
-  Object.keys(obj).forEach(key => {
-    if(obj[key] > obj[maxKey]) maxKey = key
-  })
-  return maxKey
-}
+//   Object.keys(obj).forEach(key => {
+//     if(obj[key] > obj[maxKey]) maxKey = key
+//   })
+//   return maxKey
+// }
 
 
-console.log(majorityElement([1,2,3,4,4,4,5,2,1,2,1,1,1,1,1,1,9,9,9,9,9,9]))
+// console.log(majorityElement([1,2,3,4,4,4,5,2,1,2,1,1,1,1,1,1,9,9,9,9,9,9]))
+
+
+// Given an integer x, return true if x is a 
+// palindrome
+// , and false otherwise.
+
+// Example 1:
+// Input: x = 121
+// Output: true
+// Explanation: 121 reads as 121 from left to right and from right to left.
+
+// const isPalindrome = (num) => {
+//   const toStr = num + "";
+//   const reversed = toStr.split("").reverse().join("");
+
+
+//   return toStr === reversed;
+// };
+
+// let isPalindrome = function (x) {
+//   let reverse = 0;
+//   let copy = x;
+
+//   while (copy > 0) {
+//     const digit = copy % 10;
+//     reverse = reverse * 10 + digit;
+//     copy = ~~(copy / 10);
+//   }
+
+//   return reverse == x;
+// };
+
+// console.log("isPalindrom2e", isPalindrome(121));
+
+
+//HOMEWORK
+// Roman to Integer
+// Input: s = "III"
+// Output: 3
+// Explanation: III = 3
+
+// var romanToInt = function(rom) {
+//   let res = []
+//   for(let char of rom) {
+//   }
+// };
+
+
+//HOMEWORK
+// Write a function to find the longest common prefix string amongst an array of strings.
+
+// If there is no common prefix, return an empty string "".
+
+ 
+
+// Example 1:
+
+// Input: strs = ["flower","flow","flight"]
+// Output: "fl"
+// Example 2:
+
+// Input: strs = ["dog","racecar","car"]
+// Output: ""
+// Explanation: There is no common prefix among the input strings.
+
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+// Every close bracket has a corresponding open bracket of the same type.
+ 
+
+// Example 1:
+
+// Input: s = "()"
+// Output: true
+// Example 2:
+
+// Input: s = "()[]{}"
+// Output: true
+// Example 3:
+
+// Input: s = "(]"
+// Output: false
