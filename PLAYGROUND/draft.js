@@ -196,22 +196,97 @@
 
 
 // need refactor
-const arrayChunk= (arr, size) => {
-  let maxSize = Math.ceil(arr.length /size)
-  let chunk = []
-  let count = 0
-  for(let i = 0; i < maxSize; i++) {
-    let temp = []  
-    for(let j = 0; j< size; j++) {
-      if(arr[count]) {
-        temp.push(arr[count])
-        count++
-      }
-    }
-      chunk.push(temp)
+// const arrayChunk= (arr, size) => {
+//   let maxSize = Math.ceil(arr.length /size)
+//   let chunk = []
+//   let count = 0
+//   for(let i = 0; i < maxSize; i++) {
+//     let temp = []  
+//     for(let j = 0; j< size; j++) {
+//       if(arr[count]) {
+//         temp.push(arr[count])
+//         count++
+//       }
+//     }
+//       chunk.push(temp)
 
+//   }
+//   return chunk
+// }
+
+// console.log('arr', arrayChunk([12,123,12,1,241,24,425,34,2,3,4,6,3,4,45,6,7,], 5));
+
+
+//YANDEX PRACTICS
+
+const hehe1 = (jewelry, stone) => {
+  let total = 0;
+  for (let char of stone) {
+    if (jewelry.includes(char)) {
+      ++total;
+    }
   }
-  return chunk
+
+  return total;
 }
 
-console.log('arr', arrayChunk([12,123,12,1,241,24,425,34,2,3,4,6,3,4,45,6,7,], 5));
+
+function JS(jewelry, stone) {
+  let total = 0;
+  for (let char of stone) {
+    if (jewelry.includes(char)) {
+      ++total;
+    }
+  }
+
+  return total;
+}
+
+// function JS2(arr) {
+//   let counter = 0;
+//   let max = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === 1) {
+//       counter++;
+//     } else {
+//       counter = 0;
+//     }
+//     if (counter > max) {
+//       max = counter;
+//     }
+//   }
+
+//   return max;
+// }
+
+// console.log(JS2([1, 21, 1, 1, 1, 1, 1, 2, 2, 1, 2, 1, 2, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 4]));
+
+// console.log(JS3([1, 2, 4, 1, 2, 5, 6, 4, 3, 3, 2]));
+
+function isAnagram (str1, str2) {
+  const obj1 = {};
+  const obj2 = {};
+
+  for (let char of str1) {
+    obj1[char] = obj1[char] + 1 || 1;
+  }
+
+  for (let char of str2) {
+    obj2[char] = obj2[char] + 1 || 1;
+  }
+
+  const obj1Vals = Object.values(obj1);
+  const obj2Vals = Object.values(obj2);
+
+  if (obj1Vals.length !== obj2Vals.length) return 0;
+
+  for (let char of obj1Vals) {
+    if (obj1Vals[char] !== obj1Vals[char]) return 0;
+  }
+
+  return 1;
+};
+
+
+
+console.log(isAnagram('qiu', 'iuq'))
