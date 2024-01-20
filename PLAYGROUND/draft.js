@@ -263,30 +263,74 @@ function JS(jewelry, stone) {
 
 // console.log(JS3([1, 2, 4, 1, 2, 5, 6, 4, 3, 3, 2]));
 
-function isAnagram (str1, str2) {
-  const obj1 = {};
-  const obj2 = {};
+// function isAnagram (str1, str2) {
+//   const obj1 = {};
+//   const obj2 = {};
 
-  for (let char of str1) {
-    obj1[char] = obj1[char] + 1 || 1;
-  }
+//   for (let char of str1) {
+//     obj1[char] = obj1[char] + 1 || 1;
+//   }
 
-  for (let char of str2) {
-    obj2[char] = obj2[char] + 1 || 1;
-  }
+//   for (let char of str2) {
+//     obj2[char] = obj2[char] + 1 || 1;
+//   }
 
-  const obj1Vals = Object.values(obj1);
-  const obj2Vals = Object.values(obj2);
+//   const obj1Vals = Object.values(obj1);
+//   const obj2Vals = Object.values(obj2);
 
-  if (obj1Vals.length !== obj2Vals.length) return 0;
+//   if (obj1Vals.length !== obj2Vals.length) return 0;
 
-  for (let char of obj1Vals) {
-    if (obj1Vals[char] !== obj1Vals[char]) return 0;
-  }
+//   for (let char of obj1Vals) {
+//     if (obj1Vals[char] !== obj1Vals[char]) return 0;
+//   }
 
-  return 1;
-};
+//   return 1;
+// };
+
+// console.log(isAnagram('qiu', 'iuq'))
+
+// var removeDuplicates = function (nums) {
+//   let i = 0;
+
+//   while (i < nums.length) {
+//     if (nums[i] === nums[i + 1]) {
+//       nums.splice(i, 1);
+//     } else {
+//       i++;
+//     }
+//   }
+//   return nums;
+// };
 
 
+// console.log(removeDuplicates([0,0,1,1,1, 1,2,2,3,3,3,4]))
+// Input: nums = [1,1,2]
+// Output: 2, nums = [1,2,_]
 
-console.log(isAnagram('qiu', 'iuq'))
+//SHUFFLE ARRAY 
+
+// var shuffle = function (nums, n) {
+//   const shuffle = [];
+//   const middle = Math.floor(nums.length / 2);
+//   const left = nums.slice(0, middle);
+//   const right = nums.slice(middle);
+
+//   console.log(middle, left, right);
+
+//   return shuffle;
+// };
+
+// shuffle([2,4,5,6,7,4], 3)
+
+console.log(1);
+
+setTimeout(() => {
+  console.log(2);
+}, 0);
+
+const myPromise = new Promise((resolve, reject) => {
+  console.log(3);
+  resolve(4);
+}).then((value) => console.log(value));
+
+console.log(5);
