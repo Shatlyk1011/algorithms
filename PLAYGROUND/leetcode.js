@@ -149,9 +149,7 @@ let n = 3;
 // Output: ""
 // Explanation: There is no common prefix among the input strings.
 
-const commonPrefix = (arr) => {};
 
-console.log(commonPrefix(["ho", "hell", "held", "hmhm"]));
 
 // Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
@@ -173,3 +171,142 @@ console.log(commonPrefix(["ho", "hell", "held", "hmhm"]));
 
 // Input: s = "(]"
 // Output: false
+
+//easy
+// Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+
+// Symbol       Value
+// I             1
+// V             5
+// X             10
+// L             50
+// C             100
+// D             500
+// M             1000
+
+// var romanToInt = function(s) {
+//     let total = 0
+
+//     const addTotal = (num) => {
+//       total += num
+//     }
+
+//     for(let char of s) {
+//       switch(char) {
+//         case 'I': addTotal(1)
+//         break
+//         case 'V': addTotal(5);
+//         break
+//         case 'X': addTotal(10)
+//         break
+//         case 'L': addTotal(50)
+//         break
+//         case 'C': addTotal(100)
+//         break
+//         case 'D': addTotal(500)
+//         break
+//         case 'M': addTotal(1000)
+//       }
+//     }
+
+//     return total
+// };
+
+// console.log(romanToInt('III'))
+
+//EASY
+// Given an integer array nums of length n, you want to create an array ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
+// Specifically, ans is the concatenation of two nums arrays.
+// Return the array ans.
+
+// Example 1:
+
+// Input: nums = [1,2,1]
+// Output: [1,2,1,1,2,1]
+// Explanation: The array ans is formed as follows:
+// - ans = [nums[0],nums[1],nums[2],nums[0],nums[1],nums[2]]
+// - ans = [1,2,1,1,2,1]
+
+// var getConcatenation = function(nums) {
+//   return [...nums, ...nums]
+// };
+
+// console.log(getConcatenation([1,2,3]))
+
+//promises
+
+// const asyncOperation = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log('timeout exceed')
+//       resolve('resolve')
+//     }, 2000)
+//   })
+// }
+
+
+// async function hehe () {
+//   try {
+//     console.log('hello world')
+//     const val = await asyncOperation()
+//     console.log('val', val)
+//   } catch(err) {
+//     console.log('catch', err)
+//   }
+// }
+
+// hehe()
+// console.log(`the code continuous execution process`)
+
+// function delayDouble(number) {
+  // return new Promise((resolve, reject) => {
+    // setTimeout(() => resolve(2 * number) ,1000);
+  // });
+// }
+// delayDouble(5)
+  // .then(value1 => {
+    // console.log(value1); // logs 10
+    // return delayDouble(value1);
+  // })
+  // .then(value2 => {
+    // console.log(value2); // logs 20
+    // return delayDouble(value2);
+  // })
+  // .then(value3 => {
+    // console.log(value3); // logs 40
+  // });
+
+//LeetCode
+// https://leetcode.com/problems/baseball-game/description/
+
+
+var calPoints = function(operations) {
+  let result = []
+  for(let i = 0; i<= operations.length - 1; i++) {
+    switch (operations[i]){
+      case '+': {
+        let twoBefore = result[i - 1];
+        let oneBefore = result[i]
+        let fin = twoBefore + oneBefore
+        console.log('fin', fin)
+        result.push(fin)
+      }
+      case 'D': {
+        let oneBefore = result[i];
+        console.log('oneBefore * 2', oneBefore * 2)
+
+        result.push(oneBefore * 2)
+      }
+      case 'C': {
+        result.pop()
+      }
+      default: {
+        result.push(operations[i])
+      }
+    }
+  }  
+
+  return result
+};
+
+console.log(calPoints(["5","2","C","D","+"]))
