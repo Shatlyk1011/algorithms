@@ -277,36 +277,36 @@ let n = 3;
   // });
 
 //LeetCode
-// https://leetcode.com/problems/baseball-game/description/
 
+// https://leetcode.com/problems/baseball-game/description/
 
 var calPoints = function(operations) {
   let result = []
-  for(let i = 0; i<= operations.length - 1; i++) {
-    switch (operations[i]){
-      case '+': {
-        let twoBefore = result[i - 1];
-        let oneBefore = result[i]
-        let fin = twoBefore + oneBefore
-        console.log('fin', fin)
-        result.push(fin)
+  for (let i = 0; i < operations.length; i++) {
+    let last = result.length - 1;
+    switch (operations[i]) {
+      case "+": {
+        let sum = Number(result[last]) + Number(result[last - 1]);
+        result.push(sum);
+        break;
       }
-      case 'D': {
-        let oneBefore = result[i];
-        console.log('oneBefore * 2', oneBefore * 2)
-
-        result.push(oneBefore * 2)
+      case "D": {
+        let sum = result[last] * 2;
+        result.push(sum);
+        break;
       }
-      case 'C': {
-        result.pop()
+      case "C": {
+        result.pop();
+        break;
       }
       default: {
-        result.push(operations[i])
+        result.push(Number(operations[i]));
+        break;
       }
     }
   }  
 
-  return result
+  return result.reduce((prev, curr) => prev + curr);
 };
 
 console.log(calPoints(["5","2","C","D","+"]))
