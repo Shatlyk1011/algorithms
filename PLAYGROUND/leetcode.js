@@ -278,10 +278,10 @@ let n = 3;
 
 //LeetCode
 
-// https://leetcode.com/problems/baseball-game/description/
+// https://leetcode.com/problems/baseball-game/description/ - done
 
-var calPoints = function(operations) {
-  let result = []
+var calPoints = function (operations) {
+  let result = [];
   for (let i = 0; i < operations.length; i++) {
     let last = result.length - 1;
     switch (operations[i]) {
@@ -304,9 +304,30 @@ var calPoints = function(operations) {
         break;
       }
     }
-  }  
+  }
 
-  return result.reduce((prev, curr) => prev + curr);
+  return result.reduce((prev, curr) => prev + curr, 0);
 };
 
 console.log(calPoints(["5","2","C","D","+"]))
+
+// https://leetcode.com/problems/shuffle-the-array/  - done (memory problems)
+var shuffle = function(arr, n) {
+  const res = [];
+  let count = n;
+  let state = false;
+  for(let i = 0; i < arr.length; i++) {
+      if(state) {
+          res.push(arr[count])
+          count++;
+          state = false
+      } else {
+          res.push(arr[count - n])
+          state = true
+      }
+  }
+
+  return res
+};
+
+console.log('shuffle', shuffle([1,2,3,4,5,6,7,8], 4))
