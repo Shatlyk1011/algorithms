@@ -1,3 +1,7 @@
+//Big O
+// adding node - O(1)
+// removing node - O(1); if we need to search an element and remove - O(N)
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -8,7 +12,9 @@ class Node {
 //understand how it works
 class SinglyLinkedList {
   constructor() {
+    //START
     this.head = null;
+    //END
     this.tail = null;
     this.length = 0;
   }

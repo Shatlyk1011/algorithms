@@ -312,22 +312,32 @@ var calPoints = function (operations) {
 console.log(calPoints(["5","2","C","D","+"]))
 
 // https://leetcode.com/problems/shuffle-the-array/  - done (memory problems)
-var shuffle = function(arr, n) {
+var shuffle = function (arr, n) {
   const res = [];
   let count = n;
   let state = false;
-  for(let i = 0; i < arr.length; i++) {
-      if(state) {
-          res.push(arr[count])
-          count++;
-          state = false
-      } else {
-          res.push(arr[count - n])
-          state = true
-      }
+  for (let i = 0; i < arr.length; i++) {
+    if (state) {
+      res.push(arr[count]);
+      count++;
+      state = false;
+    } else {
+      res.push(arr[count - n]);
+      state = true;
+    }
   }
 
-  return res
+  return res;
 };
 
-console.log('shuffle', shuffle([1,2,3,4,5,6,7,8], 4))
+//v2
+var shuffle2 = function (arr, n) {
+  const shuffle = [];
+  for (let i = 0; i < arr.length / 2; i++) {
+    shuffle.push(arr[i], arr[i + n]);
+  }
+
+  return shuffle;
+};
+
+console.log("shuffle", shuffle2([1, 2, 3, 4, 5, 6, 7, 8], 4));
