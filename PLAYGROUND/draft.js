@@ -219,29 +219,41 @@
 
 //YANDEX PRACTICS
 
-const hehe1 = (jewelry, stone) => {
-  let total = 0;
-  for (let char of stone) {
-    if (jewelry.includes(char)) {
-      ++total;
+// const hehe1 = (jewelry, stone) => {
+//   let total = 0;
+//   for (let char of stone) {
+//     if (jewelry.includes(char)) {
+//       ++total;
+//     }
+//   }
+
+//   return total;
+// }
+
+
+// function JS(jewelry, stone) {
+//   let total = 0;
+//   for (let char of stone) {
+//     if (jewelry.includes(char)) {
+//       ++total;omen
+//     }
+//   }
+
+//   return total;
+// }
+
+const isPalindrome = (s) => {
+  let lover = s.toLowerCase()
+  for (let i = 0; i < s.length; i++) {
+    console.log(s[i], s[s.length - 1])
+    if (lover[i] === lover[s.length - 1]) {
+      return true;
     }
+    return false;
   }
+};
 
-  return total;
-}
-
-
-function JS(jewelry, stone) {
-  let total = 0;
-  for (let char of stone) {
-    if (jewelry.includes(char)) {
-      ++total;
-    }
-  }
-
-  return total;
-}
-
+console.log(isPalindrome("Was it a car or a cat I saw?"));
 // function JS2(arr) {
 //   let counter = 0;
 //   let max = 0;
@@ -322,15 +334,15 @@ function JS(jewelry, stone) {
 
 // shuffle([2,4,5,6,7,4], 3)
 
-console.log(1);
+// console.log(1);
 
-setTimeout(() => {
-  console.log(2);
-}, 0);
+// setTimeout(() => {
+//   console.log(2);
+// }, 0);
 
-const myPromise = new Promise((resolve, reject) => {
-  console.log(3);
-  resolve(4);
-}).then((value) => console.log(value));
+// const myPromise = new Promise((resolve, reject) => {
+//   console.log(3);
+//   resolve(4);
+// }).then((value) => console.log(value));
 
-console.log(5);
+// console.log(5);
