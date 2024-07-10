@@ -10,3 +10,14 @@ const linearSearch = (arr, val) => {
 };
 
 console.log(linearSearch(names, "danya"));
+
+
+const linearS = (arr, val) => {
+  for (let [char, idx] of arr) {
+    if (char === val) return idx;
+  }
+
+  return -1;
+};
+
+console.log(linearS(["hello", "world", "muchacho", "hmhmhmh"], "muchacho"));

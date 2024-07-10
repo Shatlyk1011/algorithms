@@ -70,4 +70,41 @@ function compare(curr, last) {
     (last === "[" && curr === "]")
   );
 }
-console.log(isValid("()[]{}}{"));
+// console.log(isValid("()[]{}"));
+// console.log(isValid("()[]{}}{"));
+
+
+// const isValid2 = (s) => {
+//   const stack = [];
+
+//   for (let i = 0; i < s.length; i++) {
+//     let curr = s[i];
+
+//     if (stack.length) {
+//       const last = stack[stack.length - 1];
+
+//       if (validate(last, curr)) {
+//         stack.pop();
+//         continue;
+//       }
+//     }
+
+//     stack.push(curr);
+//   }
+
+//   return stack.length === 0;
+// };
+
+// const validate = (last, curr) => {
+//   return (
+//     (last === "(" && curr === ")") ||
+//     (last === "[" && curr === "]") ||
+//     (last === "{" && curr === "}")
+//   );
+// };
+
+// console.log(isValid2("()[]{}"));
+
+let arr = [1,2,3,4]
+console.log(arr.length--)
+
