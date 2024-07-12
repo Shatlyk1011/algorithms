@@ -582,28 +582,72 @@ const fizzBuzz = (num) => {
 
 // console.log('matrix', matrix(5));
 
-var createCounter = function(init) {
-  let val = init;
+// var createCounter = function(init) {
+//   let val = init;
 
-  return {
-    increment: function() {
-      return ++val;
-    },
-    reset: function() {
-      val = init;
-      return val;
-    },
-    decrement: function() {
-      return --val;
-    }
-  };
-};
+//   return {
+//     increment: function() {
+//       return ++val;
+//     },
+//     reset: function() {
+//       val = init;
+//       return val;
+//     },
+//     decrement: function() {
+//       return --val;
+//     }
+//   };
+// };
 
 
 // The issue with the function createCounter lies in how it handles the variable val. Specifically, val is being modified with the ++ and -- operators, but these modifications do not persist across function calls because val is re-initialized every time the returned inner function is called. Additionally, the reset function is supposed to reset val to its initial value, but it only returns init without actually updating val.
 
 // To fix this, you need to ensure that val persists across calls and is correctly reset when needed. Here is the corrected version of the function:
 
+// const counter = createCounter(5)
+
+// console.log(counter.increment());
+
+// var expect = function(val) {
+//     return {
+//         toBe: function(val2) {
+//             if(val === val2) {
+//                 return true
+//             } else {
+//                 throw new Error('Not Equal')
+//             }
+//     },
+//         notToBe: function(val3) {
+//             if(val !== val3) {
+//                 true
+//             } else {
+//                 throw  Error('Equal')
+//             }
+//     }
+//   }
+// };
+
+// console.log(expect(5).toBe(5));
+
+var createCounter = function (init) {
+  let count = init;
+
+  return {
+    increment: () => {
+      ++count;
+      return count;
+    },
+    decrement: () => {
+      count--;
+      return count;
+    },
+    reset: () => {
+      count = init;
+      return init;
+    },
+  };
+};
+
 const counter = createCounter(5)
 
-console.log(counter.increment());
+console.log(counter.increment())
