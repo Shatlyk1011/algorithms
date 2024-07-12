@@ -242,18 +242,18 @@
 //   return total;
 // }
 
-const isPalindrome = (s) => {
-  let lover = s.toLowerCase()
-  for (let i = 0; i < s.length; i++) {
-    console.log(s[i], s[s.length - 1])
-    if (lover[i] === lover[s.length - 1]) {
-      return true;
-    }
-    return false;
-  }
-};
+// const isPalindrome = (s) => {
+//   let lover = s.toLowerCase()
+//   for (let i = 0; i < s.length; i++) {
+//     console.log(s[i], s[s.length - 1])
+//     if (lover[i] === lover[s.length - 1]) {
+//       return true;
+//     }
+//     return false;
+//   }
+// };
 
-console.log(isPalindrome("Was it a car or a cat I saw?"));
+// console.log(isPalindrome("Was it a car or a cat I saw?"));
 // function JS2(arr) {
 //   let counter = 0;
 //   let max = 0;
@@ -346,3 +346,264 @@ console.log(isPalindrome("Was it a car or a cat I saw?"));
 // }).then((value) => console.log(value));
 
 // console.log(5);
+
+//reverse string 
+// const reverse = (s) => {
+//   let res = ''
+
+//   for(let char of s) {
+//     res = char + res
+//   }
+
+//   return res
+// }
+
+
+// isPalindrome
+
+// const isPalindrome = (s) => {
+//   let left = 0;
+//   let right = s.length - 1;
+
+//   while(left < right) {
+//     console.log('while');
+
+//     if(s[left] !== s[right]) {
+//       return false;
+//     }
+
+//     left++;
+//     right--
+//   }
+
+//   return true
+// }
+
+// console.log(isPalindrome('leftitfel'))
+
+// const isPalindrome2 = (s) => {
+//   return s === s.split('').reverse().join('');
+// }
+
+// console.log(isPalindrome2('hell lo'))
+
+
+//reverse int
+// const reverseInt = (num) => {
+//   let reversed = ''
+
+//   const numToStr = num + '';
+
+//   for(let char of numToStr) {
+//     reversed = char + reversed
+//   }
+//   return parseInt(reversed) * Math.sign(num)
+// }
+
+// console.log('reverseInt', reverseInt(-423));
+
+//maxChar
+
+const maxChar = (s) => {
+  //return the char which repeats the most 
+  // accccccb => c
+  // 1) loop through word
+  // 2) create an object (dictionary) and collect the char amount. 
+  // 3) loop through object and return with the highest amount
+  const obj = {}
+
+  let max = 0
+  let maxChar = ''
+
+  for(let char of s) {
+    obj[char] = obj[char] + 1 || 1 
+  }
+
+  for(let key in obj) {
+    if(obj[key] > max) {
+      max = obj[key]
+      maxChar = key
+    }
+  }
+
+  return maxChar
+}
+
+// console.log(maxChar('hellll pppppppppppp'));
+
+const fizzBuzz = (num) => {
+  // 1) loop through num
+  // 2) if num % 3 => fizz 
+  // 3) if num % 5 => buzz 
+  // 4) if num % 5 && num % 3 => fizzBuzz
+  
+  for(let i = 1; i <= num; i++) {
+    if(i % 3 === 0 && i % 5 === 0) console.log('fizzBuzz')
+    else if(i % 3 === 0) console.log('fizz')
+    else if(i % 5 === 0) console.log('buzz')
+    else console.log(i);
+  }
+}
+
+// fizzBuzz(15);
+
+
+//array chunking
+
+// const arrayChunk = (arr, size) => {
+//   const res = []
+//   let index = 0
+
+//   while(index < arr.length) {
+//     const chunk = arr.slice(index, size + index )
+
+//     res.push(chunk)
+//     index +=size
+//   }
+
+//   return res
+  
+// }
+
+// console.log(arrayChunk([1,2,3,4,5,6,7], 4))
+
+
+// const anagrams = (str1, str2) => {
+//   // 0) check if str's length are equal 
+//   // 1) create 2 object 
+//   // 2) store key values of each strings as dictionary 
+//   // 3) compare 2 object keys and values 
+//   // 4) if the values are not queal, return false else true
+
+//   if(str1.length !== str2.length) return false
+
+//   const obj1 = {}
+//   const obj2 = {}
+
+//   for(let char of str1) {
+//     obj1[char] = obj1[char] + 1 || 1;
+//   }
+
+//   for(let char of str2) {
+//     obj2[char] = obj2[char] + 1 || 1;
+//   }
+
+//   for(let key in obj1) {
+//     if(obj1[key] !== obj2[key]) {
+//       return false
+//     }
+//   }
+
+//   return true
+// }
+
+// console.log('anagrams', anagrams('bay bo', 'yab ob'));
+
+// const capitilize = (str) => {
+//   const strArr = str.split(' ')
+
+//   const upperArr = strArr.map(item => {
+//     let capital = item[0].toUpperCase()
+//     return capital + item.slice(1)
+//   })
+
+//   return upperArr.join(' ')
+// }
+
+// console.log('capitilize', capitilize('hlelo world hmhm'));
+
+// const steps = (num) => {
+
+//   for(let i = 0 ; i < num; i++){
+    
+//     let j = 0;
+//     let str = '';
+
+//     while(num > j) {
+//       if(j <= i) {
+//         str += "#"
+//       } else {
+//         str += " "
+//       }
+//       j++
+//     }
+//   }
+// }
+
+// console.log(steps(2));
+
+// const findVowels = (str) => {
+//   const vowels = ['a', 'o', 'e', 'i', 'u']
+//   let finded = 0
+
+//   for(let char of str) {
+//     if(vowels.includes(char)) {
+//       finded++
+//     }
+//   }
+
+//   return finded
+// }
+
+// console.log(findVowels('aaaoooeeeiiiuuu'));
+
+// const findVowels2 = (str) => {
+//   const matches = str.match(/[aeoui]/g)
+
+
+//   return matches?.length ?? 0
+
+// }
+
+// console.log(findVowels2('bb'));
+
+// const matrix = (num) => {
+//   let res = []
+
+//   for(let i = 0; i < num; i++) {
+
+//     let j = 0;
+//     let arr = [];
+
+//     while(num >= j) {
+
+//       if(num === j) {
+//         res.push(arr);
+//       } else {
+//         arr.push(i + j);
+//       }
+
+//       j++
+//     }
+//   }
+
+//   return res
+// }
+
+// console.log('matrix', matrix(5));
+
+var createCounter = function(init) {
+  let val = init;
+
+  return {
+    increment: function() {
+      return ++val;
+    },
+    reset: function() {
+      val = init;
+      return val;
+    },
+    decrement: function() {
+      return --val;
+    }
+  };
+};
+
+
+// The issue with the function createCounter lies in how it handles the variable val. Specifically, val is being modified with the ++ and -- operators, but these modifications do not persist across function calls because val is re-initialized every time the returned inner function is called. Additionally, the reset function is supposed to reset val to its initial value, but it only returns init without actually updating val.
+
+// To fix this, you need to ensure that val persists across calls and is correctly reset when needed. Here is the corrected version of the function:
+
+const counter = createCounter(5)
+
+console.log(counter.increment());
