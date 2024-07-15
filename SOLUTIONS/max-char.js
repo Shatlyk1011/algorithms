@@ -22,8 +22,6 @@ console.log("maxChar", maxChar("hekkkkkkkkkkkkkkkko"));
 
 // ❌ unsolved
 const maxSubstring = (str) => {
-  let count = 0;
-
   for (let i = 0; i < str.length; i++) {}
 };
 

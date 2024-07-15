@@ -23,14 +23,14 @@ function isAnagram(str1, str2) {
   return true;
 }
 
-console.log(isAnagram("qiu", "iuq"));
+// console.log(isAnagram("qiu", "iuq"));
 
 // is Anagram v2 (BEST)
 const anagrams = (str1, str2) => {
-  const str1Match = str1.match(/[a-z]gi/);
-  const str2Match = str2.match(/[a-z]gi/);
+  const str1Match = str1.match(/[a-z]/gi).join("");
+  const str2Match = str2.match(/[a-z]/gi).join("");
 
-  if (str1.length !== str2.length) return false;
+  if (str1Match.length !== str2Match.length) return false;
 
   const obj1 = {};
   const obj2 = {};
