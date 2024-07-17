@@ -169,3 +169,48 @@
 // };
 
 
+
+//  function test(nums, k) {
+//    for (let i = 0; i < nums.length; i++) {
+//      for (let j = 1; j < nums.length; j++) {
+//        if (nums[i] + nums[j] === k) {
+//          return true;
+//        }
+//      }
+//    }
+
+//    return false;
+//  }
+
+//  console.log("test", test([1, 5, 7, 3, 2, 5, 5], 8));
+
+// let i = 10;
+// var array = [];
+
+// while(i--){
+//   array.push(function() {
+//     return i + i;
+//   });
+// }
+
+// console.log(
+//   array[0](),
+//   array[1](), // Что выведет: 
+// )
+
+var removeDuplicates = function(s) {
+  let res = "";
+
+  for(let i = 0; i < s.length; i++) {
+      let last = res[res.length - 1];
+      if(s[i] === last) {
+          res = res.slice(-1);
+          continue;
+      }
+      res += s[i];
+  }
+
+  return res;
+};
+
+console.log(removeDuplicates('abbaca'));
