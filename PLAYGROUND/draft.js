@@ -198,19 +198,19 @@
 //   array[1](), // Что выведет: 
 // )
 
-var removeDuplicates = function(s) {
-  let res = "";
+// var removeDuplicates = function(s) {
+//   let res = "";
 
-  for(let i = 0; i < s.length; i++) {
-      let last = res[res.length - 1];
-      if(s[i] === last) {
-          res = res.slice(-1);
-          continue;
-      }
-      res += s[i];
-  }
+//   for(let i = 0; i < s.length; i++) {
+//       let last = res[res.length - 1];
+//       if(s[i] === last) {
+//           res = res.slice(-1);
+//           continue;
+//       }
+//       res += s[i];
+//   }
 
-  return res;
-};
+//   return res;
+// };
 
-console.log(removeDuplicates('abbaca'));
+// console.log(removeDuplicates('abbaca'));
