@@ -25,7 +25,7 @@ function isAnagram(str1, str2) {
 
 // console.log(isAnagram("qiu", "iuq"));
 
-// is Anagram v2 (BEST)
+// is Anagram v2 
 const anagrams = (str1, str2) => {
   const str1Match = str1.match(/[a-z]/gi).join("");
   const str2Match = str2.match(/[a-z]/gi).join("");

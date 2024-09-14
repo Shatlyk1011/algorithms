@@ -47,7 +47,7 @@
 
 var isPalindrome = function (s) {
   let left = 0;
-  let right = converted.length - 1;
+  let right = s.length - 1;
 
   while (left < right) {
     if (s[left] !== s[right]) {
@@ -60,4 +60,4 @@ var isPalindrome = function (s) {
   return true;
 };
 
-console.log("isPalindrome", isPalindrome("abbax"));
+console.log("isPalindrome", isPalindrome("abba"));
