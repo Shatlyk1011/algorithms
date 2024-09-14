@@ -238,3 +238,60 @@ var maximumGain = function(s, x, y) {
 };
 
 console.log('maximumGain', maximumGain("cdbcbbaaabab", 4, 5));
+
+/**
+ * Написать калькулятор выражений в обратной польской нотации.
+ *
+ * Польская нотация:
+ * - Выражение состоит из операндов: чисел и знаков операций +, -, *, /
+ * - Выражение читается слева направо
+ * - Операнды в выражении разделяются пробелами
+ * - Когда в выражении встречается знак операции, выполняется соответствующая операция 
+ *   над двумя последними встретившимися перед ним операндами в порядке их записи
+ * - Результатом вычисления выражения становится результат последней вычисленной операции
+ *
+ * Нужно вернуть результат вычисления или сообщение об ошибке.
+ */
+
+const calc = (str) => {
+  const toArr = str.split(' ')
+  const stack = []
+
+  const operators = '+-/*';
+
+  for(let i = 0; i< toArr.length; i++) {
+    if(!operators.includes(toArr[i])) {
+      stack.push(+toArr[i])
+    } else if(stack.length >= 2) {
+      const val = mathIt(toArr[i], stack[stack.length - 2], stack[stack.length - 1]);
+      stack.pop()
+      stack.pop()
+      stack.push(val)
+    } else {
+      console.log('Syntax error')
+      break
+    }
+  }
+
+  return stack
+}
+
+const mathIt = (operand, val1, val2) => {
+  switch(operand) {
+    case "+": return val1 + val2
+    case "*": return val1 * val2
+    case "-": return val1 - val2
+    case "/": return val1 / val2
+  }
+}
+
+console.log(calc('7 2 * 3 +'))   // 7 * 2 + 3 = 17 
+console.log(calc('7 2 3 * -'))    // 7 - (2 * 3) = 1
+console.log(calc('7 2 3 1 + * -'))    // 7 - 2 * (3 + 1) = -1
+
+console.log(calc('11 -12 -'))    // ?   тут нужно ответить 
+console.log(calc('7 2 3 1 * - - 3 5 + -'))  // ?
+
+console.log(calc('1 1 + +') )     // Error in Syntax
+console.log(calc('1 2 2 *') )     // Error in Syntax
+console.log(calc('1 b + c -'))    // Error in Operands
