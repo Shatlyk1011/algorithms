@@ -198,19 +198,43 @@
 //   array[1](), // Что выведет: 
 // )
 
-var removeDuplicates = function(s) {
-  let res = "";
+// var removeDuplicates = function(s) {
+//   let res = "";
 
-  for(let i = 0; i < s.length; i++) {
-      let last = res[res.length - 1];
-      if(s[i] === last) {
-          res = res.slice(-1);
-          continue;
+//   for(let i = 0; i < s.length; i++) {
+//       let last = res[res.length - 1];
+//       if(s[i] === last) {
+//           res = res.slice(-1);
+//           continue;
+//       }
+//       res += s[i];
+//   }
+
+//   return res;
+// };
+
+// console.log(removeDuplicates('abbaca'));
+
+var maximumGain = function(s, x, y) {
+  let total = 0;
+  let stack = [];
+  let i = 0;
+  while(i < s.length  ) {
+      let curr = s[i];
+      let last = stack[stack.length - 1];
+      let combine = last + curr;
+
+      if(combine === 'ab') {
+          total += x;
+          stack.pop()
+      } else if(combine === 'ba') {
+          total += y;
+          stack.pop()
       }
-      res += s[i];
+      stack.push(s[i])
+      i++
   }
-
-  return res;
+  return total
 };
 
-console.log(removeDuplicates('abbaca'));
+console.log('maximumGain', maximumGain("cdbcbbaaabab", 4, 5));
