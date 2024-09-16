@@ -9,12 +9,32 @@ const maxSubArray = function (nums) {
     // calculate nums[0], nums[1]…, nums[n] while comparing each one with current largest sum...
     nums[i] = Math.max(0, nums[i - 1]) + nums[i];
     // if nums[i] > maxSum then maxSum = nums[i]...
-    if (nums[i] > maxSum) maxSum = nums[i];
+    if (nums[i] > maxSum) {
+      maxSum = nums[i];
+    }
   }
   return maxSum;
 };
 
-console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
 //i = 1
-console.log("");
+// console.log("");
+
+const maxSubArray2 = (nums) => {
+  let maxSub = nums[0];
+  let currSum = 0;
+
+  for (let n of nums) {
+    if (currSum < 0) {
+      currSum = 0;
+    }
+    currSum += n;
+    maxSub = Math.max(maxSub, currSum);
+  }
+  return maxSub;
+};
+
+// console.log(maxSubArray2([5, 4, -1, 7, 8]));
+
+console.log(maxSubArray2([-2, 3, -1, 4, -2, -1, 2]));
