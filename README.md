@@ -11,3 +11,4 @@
 
 ## data structures
 * 1 - single-linked
+* 2 - stack
