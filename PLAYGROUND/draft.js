@@ -215,30 +215,27 @@
 
 // console.log(removeDuplicates('abbaca'));
 
-var maximumGain = function(s, x, y) {
-  let total = 0;
-  let stack = [];
-  let i = 0;
-  while(i < s.length  ) {
-      let curr = s[i];
-      let last = stack[stack.length - 1];
-      let combine = last + curr;
+// var maximumGain = function(s, x, y) {
+//   let total = 0;
+//   let stack = [];
+//   let i = 0;
+//   while(i < s.length  ) {
+//       let curr = s[i];
+//       let last = stack[stack.length - 1];
+//       let combine = last + curr;
 
-      if(combine === 'ab') {
-          total += x;
-          stack.pop()
-      } else if(combine === 'ba') {
-          total += y;
-          stack.pop()
-      }
-      stack.push(s[i])
-      i++
-  }
-  return total
-};
-
-console.log('maximumGain', maximumGain("cdbcbbaaabab", 4, 5));
-// console.log(removeDuplicates('abbaca'));
+//       if(combine === 'ab') {
+//           total += x;
+//           stack.pop()
+//       } else if(combine === 'ba') {
+//           total += y;
+//           stack.pop()
+//       }
+//       stack.push(s[i])
+//       i++
+//   }
+//   return total
+// };
 
 /**
  * Написать калькулятор выражений в обратной польской нотации.
@@ -254,45 +251,111 @@ console.log('maximumGain', maximumGain("cdbcbbaaabab", 4, 5));
  * Нужно вернуть результат вычисления или сообщение об ошибке.
  */
 
-const calc = (str) => {
-  const toArr = str.split(' ')
-  const stack = []
+// const calc = (str) => {
+//   const toArr = str.split(' ')
+//   const stack = []
 
-  const operators = '+-/*';
+//   const operators = '+-/*';
 
-  for(let i = 0; i< toArr.length; i++) {
-    if(!operators.includes(toArr[i])) {
-      stack.push(+toArr[i])
-    } else if(stack.length >= 2) {
-      const val = mathIt(toArr[i], stack[stack.length - 2], stack[stack.length - 1]);
-      stack.pop()
-      stack.pop()
-      stack.push(val)
+//   for(let i = 0; i< toArr.length; i++) {
+//     if(!operators.includes(toArr[i])) {
+//       stack.push(+toArr[i])
+//     } else if(stack.length >= 2) {
+//       const val = mathIt(toArr[i], stack[stack.length - 2], stack[stack.length - 1]);
+//       stack.pop()
+//       stack.pop()
+//       stack.push(val)
+//     } else {
+//       console.log('Syntax error')
+//       break
+//     }
+//   }
+
+//   return stack
+// }
+
+// const mathIt = (operand, val1, val2) => {
+//   switch(operand) {
+//     case "+": return val1 + val2
+//     case "*": return val1 * val2
+//     case "-": return val1 - val2
+//     case "/": return val1 / val2
+//   }
+// }
+
+// console.log(calc('7 2 * 3 +'))   // 7 * 2 + 3 = 17 
+// console.log(calc('7 2 3 * -'))    // 7 - (2 * 3) = 1
+// console.log(calc('7 2 3 1 + * -'))    // 7 - 2 * (3 + 1) = -1
+
+// console.log(calc('11 -12 -'))    // ?   тут нужно ответить 
+// console.log(calc('7 2 3 1 * - - 3 5 + -'))  // ?
+
+// console.log(calc('1 1 + +') )     // Error in Syntax
+// console.log(calc('1 2 2 *') )     // Error in Syntax
+// console.log(calc('1 b + c -'))    // Error in Operands
+
+
+// TINFOFF
+
+// function fn(str) {
+//   const parts = str.split(',');
+//   const result = new Set();
+
+//   parts.forEach(part => {
+//     if (part.includes('-')) {
+//       const [start, end] = part.split('-').map(Number);
+//       for (let i = start; i <= end; i++) {
+//         result.add(i);
+//       }
+//     } else {
+//       result.add(Number(part));
+//     }
+//   });
+
+//   // const resultList = Array.from(result)
+//   return Array.from(result).join(' ').sort((a, b) => a-b);
+// }
+
+function fn(str) {
+  const parts = str.split(',');
+  let result = '';
+
+  parts.forEach(part => {
+    if (part.includes('-')) {
+      const [start, end] = part.split('-').map(Number);
+      for (let i = start; i <= end; i++) {
+        if (result) result += ' ';
+        result += i;
+      }
     } else {
-      console.log('Syntax error')
-      break
+      if (result) result += ' ';
+      result += Number(part);
     }
-  }
+  });
 
-  return stack
+  return result;
 }
+const str = "1-6,8-9,11";
+const output = fn(str);
+console.log(output); 
 
-const mathIt = (operand, val1, val2) => {
-  switch(operand) {
-    case "+": return val1 + val2
-    case "*": return val1 * val2
-    case "-": return val1 - val2
-    case "/": return val1 / val2
-  }
-}
+// function fn(str) {
+//   const parts = str.split(',');
+//   const result = new Set();
 
-console.log(calc('7 2 * 3 +'))   // 7 * 2 + 3 = 17 
-console.log(calc('7 2 3 * -'))    // 7 - (2 * 3) = 1
-console.log(calc('7 2 3 1 + * -'))    // 7 - 2 * (3 + 1) = -1
+//   parts.forEach(part => {
+//       if (part.includes('-')) {
+//           const [start, end] = part.split('-').map(Number);
+//           for (let i = start; i <= end; i++) {
+//               result.add(i);
+//           }
+//       } else {
+//           result.add(Number(part));
+//       }
+//   });
 
-console.log(calc('11 -12 -'))    // ?   тут нужно ответить 
-console.log(calc('7 2 3 1 * - - 3 5 + -'))  // ?
+//   const resultList = Array.from(result).sort((a, b) => a - b);
+//   return resultList.join(' ');
+// }
 
-console.log(calc('1 1 + +') )     // Error in Syntax
-console.log(calc('1 2 2 *') )     // Error in Syntax
-console.log(calc('1 b + c -'))    // Error in Operands
+// module.exports = fn;
