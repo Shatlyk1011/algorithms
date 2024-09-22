@@ -18,9 +18,6 @@ const maxSubArray = function (nums) {
 
 // console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-//i = 1
-// console.log("");
-
 const maxSubArray2 = (nums) => {
   let maxSub = nums[0];
   let currSum = 0;
