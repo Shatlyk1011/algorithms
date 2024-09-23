@@ -106,5 +106,5 @@ function compare(curr, last) {
 // console.log(isValid2("()[]{}"));
 
 let arr = [1,2,3,4]
-console.log(arr.length--)
+console.log("12", arr[arr.length - 1]);
 

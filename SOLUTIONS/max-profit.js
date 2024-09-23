@@ -22,7 +22,7 @@ const maxProfit2 = (prices) => {
   let profit = 0;
 
   for (let i = 1; i < prices.length; i++) {
-    if (prices[i] < buy) {
+    if (buy > prices[i]) {
       buy = prices[i];
     } else if (prices[i] - buy > profit) {
       profit = prices[i] - buy;
