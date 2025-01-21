@@ -13,8 +13,8 @@ var rob = function (nums) {
   return nums[nums.length - 1];
 };
 
-const arr1 = [1, 2, 3, 1];
+// const arr1 = [1, 2, 3, 1];
 const arr2 = [2, 7, 9, 3, 1];
 
-console.log(rob(arr1));
+// console.log(rob(arr1));
 console.log(rob(arr2));
