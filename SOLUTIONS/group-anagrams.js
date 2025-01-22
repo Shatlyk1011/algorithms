@@ -35,7 +35,6 @@ var groupAnagrams2 = function (strs) {
 
 console.log(groupAnagrams2(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
-
 // Best approach
 var groupAnagrams = function (strs) {
   let res = {};
