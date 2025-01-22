@@ -48,5 +48,29 @@ var groupAnagrams = function (strs) {
   return Object.values(res);
 };
 
-console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+// console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
+
+const groupAnagrams3 = (strs) => {
+  const res = {}
+
+  for(let str of strs ) {
+    const alphabet = new Array(26).fill(0)
+
+    for(let char of str) {
+      alphabet[char.charCodeAt() - 97]++
+    }
+
+    const hash = alphabet.join("#")
+
+    if(res[hash]) {
+      res[hash].push(str)
+    } else {
+      res[hash] = [str]
+    }
+  }
+
+  return Object.values(res)
+}
+
+groupAnagrams3(["eat", "tea", "tan", "ate", "nat", "bat"]);

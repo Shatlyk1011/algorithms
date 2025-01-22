@@ -11,7 +11,7 @@ const findMin = function (nums) {
       right = mid;
     }
   }
-  console.log("left", left);
+  // console.log("left", left);
   return nums[left];
 };
 
@@ -32,7 +32,7 @@ const findMin = function (nums) {
 //   return nums[left];
 // };
 
-console.log(findMin([12, 13, 14, 7, 8, 9, 10, 11]));
+// console.log(findMin([12, 13, 14, 7, 8, 9, 10, 11]));
 
 // const missingNumber = function (nums) {
 //   if (nums.length === 1) return nums[0];
@@ -62,21 +62,24 @@ console.log(findMin([12, 13, 14, 7, 8, 9, 10, 11]));
 
 // console.log("isPalindrome", isPalindrome("abba"));
 
-const findMin2 = (arr) => {
+// console.log("fff", findMin([4, 5, 6, 7, 2, 3]));
+// console.log("fff", findMin([5, 6, 8, 99]));
+
+const findMin3 = (nums) => {
   let left = 0;
-  let right = arr.length - 1;
+  let right = nums.length - 1;
 
-  while (left < right) {
-    let mid = Math.floor(left + (left + right) / 2);
+  while (right > left) {
+    let middle = Math.floor(left + (right - left) / 2);
 
-    if (arr[mid] > arr[right]) {
-      left = mid + 1;
+    if (nums[middle] > nums[right]) {
+      left = middle + 1;
     } else {
-      right = mid;
+      right = middle;
     }
   }
-  return arr[left];
+  return nums[left];
 };
 
-console.log("fff", findMin([4, 5, 6, 7, 2, 3]));
-console.log("fff", findMin([5, 6, 8, 99]));
+let arr3 = [4, 5, 6, 7, 0, 1, 2];
+console.log(findMin3(arr3));
