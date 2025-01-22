@@ -35,14 +35,15 @@ var groupAnagrams2 = function (strs) {
 
 console.log(groupAnagrams2(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
-
 // Best approach
 var groupAnagrams = function (strs) {
   let res = {};
   for (let str of strs) {
-    let count = new Array(26).fill(0);
-    for (let char of str) count[char.charCodeAt() - 97]++;
-    let key = count.join("#");
+    let countArray = new Array(26).fill(0);
+    for (let char of str) {
+      countArray[char.charCodeAt() - 97]++;
+    }
+    let key = countArray.join("#");
     res[key] ? res[key].push(str) : (res[key] = [str]);
   }
   return Object.values(res);
