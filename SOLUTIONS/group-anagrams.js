@@ -49,6 +49,7 @@ var groupAnagrams = function (strs) {
   return Object.values(res);
 };
 
+<<<<<<< HEAD
 // console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
 
 
@@ -75,3 +76,7 @@ const groupAnagrams3 = (strs) => {
 }
 
 groupAnagrams3(["eat", "tea", "tan", "ate", "nat", "bat"]);
+=======
+console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
+
+>>>>>>> 9b1985937ba9f3f37e613fb4f69488fb3ad9c432

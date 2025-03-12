@@ -1,15 +1,15 @@
 // my BEST O N * logN
 var topKFrequent = function (nums, k) {
-  let obj = {};
+  const freqObj = {};
+  const final = [];
   let res = [];
-  let final = [];
 
   for (let num of nums) {
-    obj[num] = obj[num] + 1 || 1;
+    freqObj[num] = freqObj[num] + 1 || 1;
   }
 
-  for (let key in obj) {
-    let val = obj[key];
+  for (let key in freqObj) {
+    let val = freqObj[key];
 
     if (res[val]) {
       res[val].push(+key);
@@ -21,7 +21,6 @@ var topKFrequent = function (nums, k) {
   res = res.filter(Boolean);
 
   for (let i = res.length - 1; i >= 0; i--) {
-    console.log("res[i]");
     final.push(...res[i]);
     if (final.length >= k) {
       return final;

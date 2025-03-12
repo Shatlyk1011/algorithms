@@ -19,7 +19,9 @@ const searchMatrix = (matrix, target) => {
       middle = Math.floor((left + right) / 2);
     }
 
-    if (currArr[middle] === target) return true;
+    if (currArr[middle] === target) {
+      return true;
+    }
   }
 
   return false;

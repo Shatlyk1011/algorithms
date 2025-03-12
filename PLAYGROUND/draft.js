@@ -237,8 +237,11 @@
 //   return total
 // };
 
+<<<<<<< HEAD
 // console.log('maximumGain', maximumGain("cdbcbbaaabab", 4, 5));
 
+=======
+>>>>>>> 9b1985937ba9f3f37e613fb4f69488fb3ad9c432
 /**
  * Написать калькулятор выражений в обратной польской нотации.
  *
